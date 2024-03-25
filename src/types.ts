@@ -70,3 +70,8 @@ export type BookGenre = {
   title: Categories;
   img: string;
 };
+
+export type navItem = {
+  title: string;
+  icon: string;
+};

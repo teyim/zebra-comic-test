@@ -9,9 +9,10 @@ import {
   ResumeReading,
   TopSeriesCard,
   ZebraKidsCard,
+  navItem,
   trendingCard,
 } from '../../types';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { BookCardComponent } from '../components/ui/book-card/book-card.component';
 import { ResumeReadingCardComponent } from '../components/ui/resume-reading-card/resume-reading-card.component';
 import { ExtraSectionCardComponent } from '../components/ui/extra-section-card/extra-section-card.component';
@@ -20,6 +21,7 @@ import { CardSectionComponent } from '../layout/card-section/card-section.compon
 import { TopSeriesCardComponent } from '../components/ui/top-series-card/top-series-card.component';
 import { TrendingCardComponent } from '../components/ui/trending-card/trending-card.component';
 import { BadgeComponent } from '../components/ui/badge/badge.component';
+import { NavbarComponent } from '../components/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +29,7 @@ import { BadgeComponent } from '../components/ui/badge/badge.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   imports: [
+    NgClass,
     NgFor,
     NgIf,
     HeaderComponent,
@@ -38,6 +41,7 @@ import { BadgeComponent } from '../components/ui/badge/badge.component';
     TopSeriesCardComponent,
     TrendingCardComponent,
     BadgeComponent,
+    NavbarComponent,
   ],
 })
 export class HomeComponent {
