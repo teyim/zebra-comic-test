@@ -1,0 +1,24 @@
+<div class="pl-5 py-2">
+  <h1 class="text-[20px] text-white">{{ sectionTitle }}</h1>
+  <div class="py-3 relative text-white overflow-x-auto hide-scroll-bar">
+    <div class="inline-flex gap-3">
+      <book-card
+        *ngFor="let book of recommendedBooksData"
+        [bookData]="book"
+      ></book-card>
+      <div class="h-[216px] flex flex-col justify-center items-center">
+        <div class="flex flex-col">
+          <button
+            class="mx-10 bg-gray-500 whitespace-nowrap flex-col h-[40px] w-[40px] rounded-full flex justify-center items-center"
+          >
+            <img
+              src="assets/images/icons/thin_big_right.svg"
+              alt="arrow right"
+            />
+          </button>
+          <p class="my-2 w-full mx-auto text-center text-gray-500">see all</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

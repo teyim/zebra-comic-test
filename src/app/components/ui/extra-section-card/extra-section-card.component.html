@@ -1,0 +1,30 @@
+<div
+  class="container rounded-[10px] border"
+  [style.border-color]="cardData.ringColor"
+  [style.background-image]="'url(' + cardData.imgUrl + ')'"
+>
+  <div
+    class="w-[50px] flex flex-col justify-center items-center h-[60px] absolute top-1 left-1 rounded-[5px] bg-[#BD0002] text-center"
+  >
+    <p class="text-xs mt-2">{{ cardData.date.month }}</p>
+    <h2 class="text-[22px] -mt-2">{{ cardData.date.day }}</h2>
+  </div>
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- Text content -->
+  <div class="content p-3">
+    <div class="w-[140px] h-[30px]">
+      <img [src]="cardData.titleImgUrl" alt="title" />
+    </div>
+    <p class="text-sm mt-[60px] text-gray-300">
+      This is the comic synopsis which is clickable to open more details about
+      it. Let’s add some new text here.
+    </p>
+    <button
+      class="my-5 bg-gradient-to-r to-[#995EBD] from-[#BD5E5F] w-[313px] h-[50px] rounded-[10px]"
+    >
+      ${{ cardData.price }}/Year
+    </button>
+  </div>
+</div>

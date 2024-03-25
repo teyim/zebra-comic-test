@@ -1,0 +1,57 @@
+<!--Start Header top section-->
+<div>
+  <div class="bg-[#191919] p-5">
+    <div class="h-[300px]">
+      <div class="flex justify-between items-center">
+        <div class="w-[30px] h-[45.1px]">
+          <img src="assets/images/logo.png" alt="logo" class="w-full h-full" />
+        </div>
+        <div class="w-[35px] h-[35px] rounded-dull">
+          <img
+            src="assets/images/user.png"
+            alt="logo"
+            class="w-full h-full rounded-full"
+          />
+        </div>
+      </div>
+    </div>
+    <!--End Header top section-->
+
+    <!--Start header bottom section-->
+    <div class="text-xs text-white">
+      <div class="flex justify-center">
+        <ul class="space-x-[5px] flex">
+          <li class="bg-[#BD0002] rounded-[5px] py-[3px] px-[4px]">
+            NEW TODAY
+          </li>
+          <li class="bg-gray-400 rounded-[5px] py-[3px] px-[4px]">ACTION</li>
+          <li class="bg-gray-400 rounded-[5px] py-[3px] px-[4px]">COMEDY</li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="assets/images/image-1.png" alt="book title" class="my-2" />
+      </div>
+
+      <p class="text-center">
+        This is the comic synopsis which is clickable to open more details about
+        it. Let’s add some new text here.
+      </p>
+
+      <div class="flex justify-center space-x-2 my-3">
+        @for (bookCover of headerBooksData; track bookCover) {
+        <div class="w-[50px] h-[30px] shadow-md">
+          <img [src]="bookCover.imgUrl" alt="{{ bookCover.alt }}" />
+          <div
+            *ngIf="bookCover.progress"
+            class="w-full h-[5px] bg-gray-500 rounded-lg my-1"
+          >
+            <div class="bg-white rounded-lg w-[25px] h-full"></div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <!--End header bottom section-->
+</div>

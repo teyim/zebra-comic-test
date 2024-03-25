@@ -1,0 +1,76 @@
+<section class="bg-black">
+  <!--Header section-->
+  <app-header></app-header>
+
+  <!-- Start Recommended section-->
+  <card-section sectionTitle="{{ sections.recommended }}" />
+  <!-- End Recommended section-->
+
+  <!--Start Resume Reading section-->
+  <div class="pl-5 py-3 border-b-0 border-t-0">
+    <h1 class="text-[20px] text-white">Resume Reading</h1>
+    <div class="py-3 relative text-white overflow-x-auto hide-scroll-bar">
+      <div class="inline-flex gap-3">
+        <resume-reading-card
+          *ngFor="let data of resumeReadingData"
+          [cardData]="data"
+        ></resume-reading-card>
+        <div class="h-[117px] flex flex-col justify-center items-center">
+          <div class="flex flex-col">
+            <button
+              class="mx-10 bg-gray-500 whitespace-nowrap flex-col h-[40px] w-[40px] rounded-full flex justify-center items-center"
+            >
+              <img
+                src="assets/images/icons/thin_big_right.svg"
+                alt="arrow right"
+              />
+            </button>
+            <p class="my-2 w-full mx-auto text-center text-gray-500">see all</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--End Resume Reading section-->
+
+  <!-- Start Extra section-->
+  <div class="pl-5 py-2 pr-5">
+    <h1 class="text-[20px] text-white">Extra</h1>
+    <div class="py-3 relative text-white overflow-x-auto hide-scroll-bar">
+      <div class="inline-flex gap-3">
+        <extra-section-card
+          *ngFor="let book of extraSectionData"
+          [cardData]="book"
+        ></extra-section-card>
+      </div>
+    </div>
+  </div>
+  <!-- End Extra section-->
+
+  <!-- Start here section-->
+  <card-section sectionTitle="{{ sections.start }}" />
+  <!-- End of start here section-->
+
+  <!-- Start Zebra kids section-->
+  <div class="pl-5 py-2">
+    <h1 class="text-[20px] text-white">Zebra kids</h1>
+    <div class="py-3 relative text-white overflow-x-auto hide-scroll-bar">
+      <div class="inline-flex gap-3 mr-8">
+        <zebrakids-card
+          *ngFor="let book of zebraKidsCardData"
+          [cardData]="book"
+        ></zebrakids-card>
+      </div>
+    </div>
+  </div>
+  <!-- End of Zebra kids section-->
+
+  <!-- Start Romance section-->
+  <card-section sectionTitle="{{ sections.romance }}" />
+  <!-- End of Romance section-->
+
+  <!-- Start Afro section-->
+  <card-section sectionTitle="{{ sections.afro }}" />
+  <!-- End of fro section-->
+</section>

@@ -1,0 +1,11 @@
+<div>
+  <div class="bg-[#C4C4C4] w-[144px] h-[216px] rounded-[10px] relative">
+    <div
+      *ngIf="bookData.statusText"
+      class="bg-[#BD0002] rounded-[5px] py-[3px] px-[4px] text-xs absolute bottom-1 left-1"
+    >
+      {{ bookData.statusText }}
+    </div>
+  </div>
+  <h5 class="my-2 text-gray-500">{{ bookData.title }}</h5>
+</div>
