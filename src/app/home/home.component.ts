@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../components/header/header.component';
+import { Injectable } from '@angular/core';
 import {
+  BookGenre,
+  Categories,
   ExtraCard,
   RecommendedBook,
   ResumeReading,
+  TopSeriesCard,
   ZebraKidsCard,
+  trendingCard,
 } from '../../types';
 import { NgFor, NgIf } from '@angular/common';
 import { BookCardComponent } from '../components/ui/book-card/book-card.component';
@@ -12,6 +17,9 @@ import { ResumeReadingCardComponent } from '../components/ui/resume-reading-card
 import { ExtraSectionCardComponent } from '../components/ui/extra-section-card/extra-section-card.component';
 import { ZebrakidsCardComponent } from '../components/ui/zebrakids-card/zebrakids-card.component';
 import { CardSectionComponent } from '../layout/card-section/card-section.component';
+import { TopSeriesCardComponent } from '../components/ui/top-series-card/top-series-card.component';
+import { TrendingCardComponent } from '../components/ui/trending-card/trending-card.component';
+import { BadgeComponent } from '../components/ui/badge/badge.component';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +35,9 @@ import { CardSectionComponent } from '../layout/card-section/card-section.compon
     ExtraSectionCardComponent,
     ZebrakidsCardComponent,
     CardSectionComponent,
+    TopSeriesCardComponent,
+    TrendingCardComponent,
+    BadgeComponent,
   ],
 })
 export class HomeComponent {
@@ -120,4 +131,138 @@ export class HomeComponent {
       isNewToday: true,
     },
   ];
+
+  topSeriesCol1Data: TopSeriesCard[] = [
+    {
+      title: 'The Guy Upstairs and a Longer Title as Such',
+      rank: 1,
+      views: 680,
+    },
+    {
+      title: 'A Reverie with Nana',
+      rank: 2,
+      views: 680,
+    },
+    {
+      title: 'Love at First Fight',
+      rank: 3,
+      views: 680,
+    },
+  ];
+
+  topSeriesCol2Data: TopSeriesCard[] = [
+    {
+      title: 'The Guy Upstairs and a Longer Title as Such',
+      rank: 1,
+      views: 680,
+    },
+    {
+      title: 'The Guy Upstairs and a Longer Title as Such',
+      rank: 2,
+      views: 680,
+    },
+    {
+      title: 'The Guy Upstairs and a Longer Title as Such',
+      rank: 3,
+      views: 680,
+    },
+  ];
+
+  trendingTodayData: trendingCard[] = [
+    {
+      title: 'Chronicles of Totemism dsllslsls lsl..',
+      categories: ['Action', 'Comedy'],
+      rank: '01',
+      isNew: true,
+      views: 10.2,
+    },
+    {
+      title: 'Chronicles of Totemism ',
+      categories: ['Action', 'Comedy'],
+      rank: '02',
+      isNew: true,
+      views: 10.2,
+    },
+    {
+      title: 'Chronicles of Totemism ',
+      categories: ['Action', 'Comedy'],
+      rank: '03',
+      isNew: true,
+      views: 10.2,
+    },
+    {
+      title: 'Chronicles of Totemism ',
+      categories: ['Action', 'Comedy'],
+      rank: '04',
+      isNew: true,
+      views: 10.2,
+    },
+  ];
+
+  bookGenresData: BookGenre[] = [
+    {
+      title: Categories.Romance,
+      img: 'assets/images/book-covers/image-17.png',
+    },
+    {
+      title: Categories.Horror,
+      img: 'assets/images/book-covers/image-11.png',
+    },
+    {
+      title: Categories.Fantasy,
+      img: 'assets/images/book-covers/image-6.png',
+    },
+    {
+      title: Categories.ScienceFiction,
+      img: 'assets/images/book-covers/image-12.png',
+    },
+    {
+      title: Categories.SOL,
+      img: 'assets/images/book-covers/image-7.png',
+    },
+    {
+      title: Categories.SuperNatural,
+      img: 'assets/images/book-covers/image-13.png',
+    },
+    {
+      title: Categories.Action_Adventure,
+      img: 'assets/images/book-covers/image-8.png',
+    },
+    {
+      title: Categories.SuperHero,
+      img: 'assets/images/book-covers/image-14.png',
+    },
+    {
+      title: Categories.Drama,
+      img: 'assets/images/book-covers/image-9.png',
+    },
+    {
+      title: Categories.Mystery,
+      img: 'assets/images/book-covers/image-15.png',
+    },
+    {
+      title: Categories.Comedy,
+      img: 'assets/images/book-covers/image-10.png',
+    },
+    {
+      title: Categories.Thriller,
+      img: 'assets/images/book-covers/image-16.png',
+    },
+  ];
+
+  nextedBookGenreArray: BookGenre[][] = [];
+
+  ngOnInit(): void {
+    this.nextedBookGenreArray = this.chunkArray(this.bookGenresData, 2);
+  }
+
+  chunkArray(array: any[], size: number): any[][] {
+    const chunkedArr = [];
+    let index = 0;
+    while (index < array.length) {
+      chunkedArr.push(array.slice(index, index + size));
+      index += size;
+    }
+    return chunkedArr;
+  }
 }

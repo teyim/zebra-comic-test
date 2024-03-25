@@ -1,0 +1,23 @@
+<div class="my-4">
+  <div class="w-[95%] h-[110px] flex space-x-5">
+    <div class="w-[100px] h-[110px] rounded-[10px] bg-[#D9D9D9]"></div>
+    <div class="flex">
+      <div
+        class="size-[26px] flex justify-center items-center rounded-full my-auto bg-black"
+      >
+        <img
+          *ngIf="bookData.rank == 1"
+          src="assets/images/icons/number_one.png"
+          alt="icon one"
+        />
+        <span *ngIf="bookData.rank > 1" class="font-semibold">{{
+          bookData.rank
+        }}</span>
+      </div>
+      <div class="my-auto w-[210px] ml-5">
+        <h5 class="font-semibold text-sm">{{ bookData.title }}</h5>
+        <p class="text-gray-500 text-xs my-3">{{ bookData.views }} views</p>
+      </div>
+    </div>
+  </div>
+</div>

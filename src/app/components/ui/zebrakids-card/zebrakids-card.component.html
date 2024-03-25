@@ -5,14 +5,9 @@
   <!-- Dark overlay -->
   <div class="overlay"></div>
   <div class="mt-auto absolute flex flex-col px-4 bottom-1">
-    <h5 class="font-semibold text-sm my-10 text-gray-200">
+    <h5 class="font-semibold text-[13px] my-10 text-gray-200">
       {{ cardData.title }}
     </h5>
-    <div
-      *ngIf="cardData.isNewToday"
-      class="bg-[#BD0002] my-2 rounded-[5px] py-[3px] ml-4 px-[4px] text-xs absolute bottom-1 left-1"
-    >
-      NEW TODAY
-    </div>
+    <div *ngIf="cardData.isNewToday"><app-badge badgeText="NEW TODAY" /></div>
   </div>
 </div>
